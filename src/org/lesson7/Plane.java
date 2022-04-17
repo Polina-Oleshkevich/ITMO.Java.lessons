@@ -16,12 +16,12 @@ public class Plane {
 
     }
     public static void main(String[] args) {
-        Plane.Wing plane1 = new Plane.Wing();
-        plane1.setWeight(8000);
-        plane1.display();
-        Plane.Wing plane2 = new Plane.Wing();
-        plane2.setWeight(5000);
-        plane2.display();
+        Plane.Wing wing1 = new Plane.Wing();
+        wing1.setWeight(8000);
+        wing1.display();
+        Plane.Wing wing2 = new Plane.Wing();
+        wing2.setWeight(5000);
+        wing2.display();
     }
 }
 

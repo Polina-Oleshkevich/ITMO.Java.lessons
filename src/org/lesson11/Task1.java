@@ -9,8 +9,7 @@ import java.util.List;
 public class Task1 {
     //1.Написать метод, который читает текстовый файл и возвращает его в виде списка строк.
     public static List<String> fileString(File file) {
-        file = new File("files/text.txt");
-        List strList = new ArrayList<String>();
+        List<String> strList = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String input = null;
             while ((input = reader.readLine()) != null) {
@@ -93,18 +92,18 @@ public class Task1 {
         try {
             out = new FileOutputStream(file4);
             ins = new FileInputStream(file3);
-            BufferedReader br = new BufferedReader(new FileReader(file4));
-            BufferedWriter bw = new BufferedWriter(new FileWriter(file4));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(file4));
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file4));
             String ln;
             while (ins.available() > 0) {
                 out.write(ins.read());
             }
-            while ((ln = br.readLine()) != null) {
-                bw.write(ln.replaceAll("[^а-яА-Яa-zA-Z\\d]", "\\$"));
-                bw.newLine();
+            while ((ln = bufferedReader.readLine()) != null) {
+                bufferedWriter.write(ln.replaceAll("[^а-яА-Яa-zA-Z\\d]", "\\$"));
+                bufferedWriter.newLine();
             }
-            br.close();
-            bw.close();
+            bufferedReader.close();
+            bufferedWriter.close();
             Files.move(file4.toPath(), file4.toPath(), StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException e) {
             e.getMessage();

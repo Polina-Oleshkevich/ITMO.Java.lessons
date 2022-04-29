@@ -3,9 +3,6 @@ package org.lesson6.task1_2;
 public class Client extends Human {
     private String bankName;
 
-
-
-
     public Client(String name, String surname, String bankName) {
         super(name, surname);
         this.bankName = bankName;
@@ -17,6 +14,6 @@ public class Client extends Human {
 
     @Override
     public String getInfo() {
-        return null;
+        return "name";
     }
 }
